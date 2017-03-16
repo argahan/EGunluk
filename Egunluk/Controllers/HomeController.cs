@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Egunluk.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,12 @@ namespace Egunluk.Controllers
 {
     public class HomeController : Controller
     {
+        private DB _db = new DB();
+        
         public ActionResult Index()
         {
-            return View();
+            var model = _db.Users.ToList();
+            return View(model);
         }
 
         public ActionResult About()

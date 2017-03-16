@@ -1,7 +1,15 @@
-﻿@{
+﻿@model IEnumerable<Egunluk.Models.User>
+@{
     ViewBag.Title = "Home Page";
 }
-
+@foreach(var item in Model)
+{
+    <div>
+        <h1>@item.Email</h1>
+        <h1>@item.First_Name</h1>
+        <h1>@item.Last_Name</h1>
+    </div>
+}
 <div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
